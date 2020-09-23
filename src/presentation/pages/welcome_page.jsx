@@ -1,15 +1,8 @@
-import React, { useEffect } from "react";
-import Loader from "react-loader-spinner";
-import { useHistory } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 import pokeball from "../../assets/img/poke.png";
 
-function SplashScreen() {
-	const history = useHistory();
-
-	useEffect(() => {
-		setTimeout(() => history.push("/test"), 3000);
-	}, []);
-
+function WelcomePage() {
 	return (
 		<div className="bg-red-600 w-full h-screen flex flex-col text-white items-center justify-evenly align-middle p-12">
 			<div className="w-1/2 lg:w-1/4">
@@ -19,11 +12,14 @@ function SplashScreen() {
 				<p>PokeReader in React</p>
 				<p>By ElZombieIsra</p>
 			</div>
-			<div>
-				<Loader type="TailSpin" color="white"></Loader>
-			</div>
+			<Link
+				to="/home"
+				className="font-semibold py-2 px-4 border border-red-600 hover:border-gray-400 rounded hover:shadow"
+			>
+				Let's go
+			</Link>
 		</div>
 	);
 }
 
-export default SplashScreen;
+export default WelcomePage;
