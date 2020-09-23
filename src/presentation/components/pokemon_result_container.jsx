@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { fetchPokemonInfo } from "../../data/providers/pokemon_provider";
 
 function PokemonResultContainer({ poke }) {
 	const { name, url } = poke;
@@ -24,12 +25,6 @@ function PokemonResultContainer({ poke }) {
 			</div>
 		</Link>
 	);
-}
-
-async function fetchPokemonInfo(pokemonUrl) {
-	const res = await fetch(pokemonUrl);
-	const data = await res.json();
-	return data;
 }
 
 export default PokemonResultContainer;
