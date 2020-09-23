@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Loader from "react-loader-spinner";
 import { fetchPokemon } from "../../data/providers/pokemon_provider";
+import AppBar from "../components/app_bar";
 import PokemonResultContainer from "../components/pokemon_result_container";
 
 function HomePage() {
@@ -26,9 +27,7 @@ function HomePage() {
 
 	return (
 		<div>
-			<div className="bg-red-600 w-full flex flex-col text-white items-center justify-evenly align-middle p-5">
-				<p className="text-3xl font-medium">PokeReader React</p>
-			</div>
+			<AppBar text="PokeReader React" />
 			<InfiniteScroll
 				dataLength={pokemon.length}
 				hasMore={nextUrl}
